@@ -7,10 +7,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.sql.Driver;
 import java.util.List;
 
-public class ClickButtonTest {
+public class ClickButtonTest1 {
     WebDriver driver;
 
     @BeforeClass
