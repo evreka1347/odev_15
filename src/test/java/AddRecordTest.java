@@ -35,17 +35,18 @@ public class AddRecordTest {
 
         driver.findElement(By.id("submit")).click();
 
-        WebElement fourthRowSalary = driver.findElement(By.cssSelector("div.rt-tr-group:nth-child(4) div.rt-td:nth-child(5)"));
+        WebElement fourthRowSalary = driver.findElement(By.xpath("//div[@class='rt-tr-group'][4]//div[@class='rt-td'][5]"));
         String initialSalary = fourthRowSalary.getText();
 
-        WebElement editButton = driver.findElement(By.cssSelector("div.rt-tr-group:nth-child(4) span[title='Edit']"));
+        WebElement editButton = driver.findElement(By.xpath("//div[@class='rt-tr-group'][4]//span[@title='Edit']"));
         editButton.click();
+
         WebElement salaryField = driver.findElement(By.id("salary"));
         salaryField.clear();
         salaryField.sendKeys("50000");
         driver.findElement(By.id("submit")).click();
 
-        WebElement editedSalary = driver.findElement(By.cssSelector("div.rt-tr-group:nth-child(4) div.rt-td:nth-child(5)"));
+        WebElement editedSalary = driver.findElement(By.xpath("//div[@class='rt-tr-group'][4]//div[@class='rt-td'][5]"));
         String updatedSalary = editedSalary.getText();
         Assert.assertEquals(updatedSalary, "50000");
         Assert.assertNotEquals(initialSalary, updatedSalary);
